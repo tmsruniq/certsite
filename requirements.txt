@@ -1,6 +1,6 @@
 asgiref==3.11.1
 charset-normalizer==3.4.4
-Django==6.0.3
+Django==5.0.3
 gunicorn==25.1.0
 numpy==2.4.2
 packaging==26.0

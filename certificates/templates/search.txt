@@ -1,0 +1,26 @@
+<h2>Certificate Search</h2>
+
+<form method="post">
+{% csrf_token %}
+
+Certificate Number:<br>
+<input type="text" name="certificate_number"><br><br>
+
+Instrument Serial Number:<br>
+<input type="text" name="instrument_serial"><br><br>
+
+<button type="submit">Search</button>
+
+</form>
+
+<hr>
+
+{% if cert %}
+<h3>Certificate Found</h3>
+
+<a href="{{ cert.certificate_file.url }}" download>
+Download Certificate
+</a>
+
+{% elif cert == None %}
+{% endif %}

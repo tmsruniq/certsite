@@ -22,5 +22,4 @@ Instrument Serial Number:<br>
 Download Certificate
 </a>
 
-{% elif cert == None %}
 {% endif %}

@@ -1,17 +1,25 @@
-<form method="POST">
-    {% csrf_token %}
-    <label>Certificate Number:</label>
-    <input type="text" name="certificate_number" required>
-    
-    <label>Instrument Serial:</label>
-    <input type="text" name="instrument_serial" required>
-    
-    <button type="submit">Search</button>
-</form>
+<h2>My Certificates</h2>
 
-{% if cert %}
-    <p>Certificate Found: {{ cert.certificate_file.url }}</p>
-    <a href="{{ cert.certificate_file.url }}" download>Download Certificate</a>
-{% elif cert is not none %}
-    <p>No certificate found for your input.</p>
+{% if certs %}
+<table border="1">
+<tr>
+<th>Certificate Number</th>
+<th>Instrument</th>
+<th>Download</th>
+</tr>
+
+{% for cert in certs %}
+<tr>
+<td>{{ cert.certificate_number }}</td>
+<td>{{ cert.instrument }}</td>
+<td>
+<a href="{{ cert.certificate_file.url }}">Download</a>
+</td>
+</tr>
+{% endfor %}
+
+</table>
+
+{% else %}
+<p>No certificates available.</p>
 {% endif %}

@@ -7,8 +7,8 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.search_certificate, name='search_certificate'),
-    path('accounts/', include('django.contrib.auth.urls')),  # login/logout URLs
+    path('', views.my_certificates, name='my_certificates'),
+    path('accounts/', include('django.contrib.auth.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

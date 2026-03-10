@@ -4,7 +4,6 @@ from certificates import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-
-    # homepage (certificate search)
     path('', views.search_certificate, name='search_certificate'),
+    path('accounts/', include('django.contrib.auth.urls')),
 ]
